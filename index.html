@@ -1,0 +1,30 @@
+ <!DOCTYPE html>
+    <html lang="ru">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Объявления</title>
+    </head>
+    <body>
+        <h1>Разместить объявление</h1>
+        <form id="adForm">
+            <label for="title">Заголовок:</label>
+            <input type="text" id="title" required>
+            <br>
+            <label for="description">Описание:</label>
+            <textarea id="description" required></textarea>
+            <br>
+            <button type="submit">Отправить</button>
+        </form>
+
+        <script>
+            document.getElementById('adForm').addEventListener('submit', function(e) {
+                e.preventDefault();
+                const title = document.getElementById('title').value;
+                const description = document.getElementById('description').value;
+                console.log("Объявление размещено:", { title, description });
+                alert("Ваше объявление размещено!");
+            });
+        </script>
+    </body>
+    </html>
