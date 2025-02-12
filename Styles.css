@@ -113,3 +113,16 @@ main {
 .ad:hover {
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
+
+.edit-button {
+    background: #007bff;
+    color: #fff;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.edit-button:hover {
+    background: #0056b3;
+}
