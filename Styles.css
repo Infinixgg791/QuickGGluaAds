@@ -1,14 +1,24 @@
+* {
+    box-sizing: border-box;
+}
+
 body {
     font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
+    background-color: #f8f9fa;
     margin: 0;
     padding: 0;
 }
 
 header {
-    background: #333;
+    background: #343a40;
     color: #fff;
-    padding: 10px 20px;
+    padding: 20px 0;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -20,19 +30,18 @@ header {
 }
 
 .icon {
-    width: 30px;
-    height: 30px;
-    margin-right: 15px;
+    font-size: 30px;
+    margin-right: 20px;
     cursor: pointer;
 }
 
 button {
-    padding: 10px 15px;
+    padding: 10px 20px;
     background: #28a745;
     color: #fff;
     border: none;
+    border-radius: 5px;
     cursor: pointer;
-    font-size: 20px;
 }
 
 button:hover {
@@ -40,28 +49,10 @@ button:hover {
 }
 
 main {
-    padding: 20px;
+    padding: 20px 0;
 }
 
-.ad {
-    background: #fff;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    padding: 15px;
-    margin-bottom: 15px;
-    transition: box-shadow 0.3s;
-}
-
-.ad img {
-    max-width: 100%;
-    height: auto;
-}
-
-.ad:hover {
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-}
-
-.modal {
+#adFormModal {
     display: none;
     position: fixed;
     z-index: 1;
@@ -70,16 +61,17 @@ main {
     width: 100%;
     height: 100%;
     overflow: auto;
-    background-color: rgb(0,0,0);
-    background-color: rgba(0,0,0,0.4);
+    background-color: rgba(0, 0, 0, 0.5);
 }
 
 .modal-content {
-    background-color: #fefefe;
+    background-color: #fff;
     margin: 15% auto;
     padding: 20px;
     border: 1px solid #888;
-    width: 80%;
+    width: 90%;
+    max-width: 500px;
+    border-radius: 10px;
 }
 
 .close-button {
@@ -94,4 +86,30 @@ main {
     color: black;
     text-decoration: none;
     cursor: pointer;
+}
+
+.ad {
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 15px;
+    margin-bottom: 15px;
+    transition: box-shadow 0.3s;
+    display: flex;
+    flex-direction: column;
+}
+
+.ad img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+.ad h2 {
+    margin: 0 0 10px;
+}
+
+.ad:hover {
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
