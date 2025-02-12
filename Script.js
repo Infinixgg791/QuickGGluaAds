@@ -31,7 +31,6 @@ document.getElementById('adForm').addEventListener('submit', function(e) {
         reader.readAsDataURL(imageFile);
     }
 
-    // Очистка формы и закрытие модального окна
     this.reset();
     document.getElementById('adFormModal').style.display = 'none';
 });
