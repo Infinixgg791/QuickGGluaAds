@@ -3,83 +3,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Сайт объявлений</title>
+    <title>Объявления - Lua GameGuardian</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <header>
-        <h1>Сайт объявлений</h1>
+        <h1>Объявления Lua GameGuardian</h1>
+        <div class="header-icons">
+            <img src="account-icon.png" alt="Аккаунт" class="icon" id="accountIcon">
+            <button id="addAdButton">+</button>
+        </div>
     </header>
     <main>
-        <form id="adForm">
-            <input type="text" id="title" placeholder="Название" required>
-            <textarea id="description" placeholder="Описание" required></textarea>
-            <input type="file" id="image" accept="image/*" required>
-            <button type="submit">Добавить объявление</button>
-        </form>
         <div id="adsContainer"></div>
     </main>
+
+    <div id="adFormModal" class="modal">
+        <div class="modal-content">
+            <span class="close-button" id="closeModal">&times;</span>
+            <form id="adForm">
+                <input type="text" id="title" placeholder="Название" required>
+                <textarea id="description" placeholder="Описание" required></textarea>
+                <input type="file" id="image" accept="image/*" required>
+                <button type="submit">Добавить объявление</button>
+            </form>
+        </div>
+    </div>
+
     <script src="script.js"></script>
 </body>
 </html>
-```
-
-### CSS (styles.css)
-```css
-body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
-    margin: 0;
-    padding: 0;
-}
-
-header {
-    background: #333;
-    color: #fff;
-    padding: 10px 20px;
-    text-align: center;
-}
-
-main {
-    padding: 20px;
-}
-
-form {
-    margin-bottom: 20px;
-}
-
-input[type="text"], textarea {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 10px;
-}
-
-button {
-    padding: 10px 15px;
-    background: #28a745;
-    color: #fff;
-    border: none;
-    cursor: pointer;
-}
-
-button:hover {
-    background: #218838;
-}
-
-.ad {
-    background: #fff;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    padding: 15px;
-    margin-bottom: 15px;
-    transition: box-shadow 0.3s;
-}
-
-.ad img {
-    max-width: 100%;
-    height: auto;
-}
-
-.ad:hover {
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-}
