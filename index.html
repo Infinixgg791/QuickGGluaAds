@@ -1,30 +1,85 @@
- <!DOCTYPE html>
-    <html lang="ru">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Объявления</title>
-    </head>
-    <body>
-        <h1>Разместить объявление</h1>
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Сайт объявлений</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Сайт объявлений</h1>
+    </header>
+    <main>
         <form id="adForm">
-            <label for="title">Заголовок:</label>
-            <input type="text" id="title" required>
-            <br>
-            <label for="description">Описание:</label>
-            <textarea id="description" required></textarea>
-            <br>
-            <button type="submit">Отправить</button>
+            <input type="text" id="title" placeholder="Название" required>
+            <textarea id="description" placeholder="Описание" required></textarea>
+            <input type="file" id="image" accept="image/*" required>
+            <button type="submit">Добавить объявление</button>
         </form>
+        <div id="adsContainer"></div>
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>
+```
 
-        <script>
-            document.getElementById('adForm').addEventListener('submit', function(e) {
-                e.preventDefault();
-                const title = document.getElementById('title').value;
-                const description = document.getElementById('description').value;
-                console.log("Объявление размещено:", { title, description });
-                alert("Ваше объявление размещено!");
-            });
-        </script>
-    </body>
-    </html>
+### CSS (styles.css)
+```css
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background: #333;
+    color: #fff;
+    padding: 10px 20px;
+    text-align: center;
+}
+
+main {
+    padding: 20px;
+}
+
+form {
+    margin-bottom: 20px;
+}
+
+input[type="text"], textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+button {
+    padding: 10px 15px;
+    background: #28a745;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #218838;
+}
+
+.ad {
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 15px;
+    margin-bottom: 15px;
+    transition: box-shadow 0.3s;
+}
+
+.ad img {
+    max-width: 100%;
+    height: auto;
+}
+
+.ad:hover {
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
