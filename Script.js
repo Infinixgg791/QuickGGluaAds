@@ -1,3 +1,11 @@
+document.getElementById('addAdButton').addEventListener('click', function() {
+    document.getElementById('adFormModal').style.display = 'block';
+});
+
+document.getElementById('closeModal').addEventListener('click', function() {
+    document.getElementById('adFormModal').style.display = 'none';
+});
+
 document.getElementById('adForm').addEventListener('submit', function(e) {
     e.preventDefault();
 
@@ -23,6 +31,7 @@ document.getElementById('adForm').addEventListener('submit', function(e) {
         reader.readAsDataURL(imageFile);
     }
 
-    // Очистка формы
+    // Очистка формы и закрытие модального окна
     this.reset();
+    document.getElementById('adFormModal').style.display = 'none';
 });
